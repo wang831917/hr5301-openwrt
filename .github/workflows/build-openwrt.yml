@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Initialize Environment
       env:
@@ -79,7 +79,7 @@ jobs:
 
     - name: Upload Bin Directory
       if: env.UPLOAD_BIN_DIR == 'true'
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: OpenWrt_Bin_LBA-047-CH
         path: openwrt/bin
@@ -93,7 +93,7 @@ jobs:
 
     - name: Upload Firmware
       if: env.UPLOAD_FIRMWARE == 'true'
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: OpenWrt_Firmware_LBA-047-CH
         path: ${{ env.FIRMWARE }}
